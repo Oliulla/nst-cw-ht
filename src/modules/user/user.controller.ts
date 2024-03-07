@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/CreateUser.dto';
 import { User } from 'src/schemas/User.schema';
@@ -16,5 +16,10 @@ export class UserController {
   @Get()
   async findUsers(): Promise<User[]> {
     return await this.userService.findUsers();
+  }
+
+  @Get(':id')
+  async findSingleUser(@Param('id') id: string): Promise<User> {
+    return await this.userService.findSingleUser(id);
   }
 }

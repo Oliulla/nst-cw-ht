@@ -6,8 +6,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
-    .setTitle('Kurbani Cow Hat')
-    .setDescription('The Cow Hat API description')
+    .setTitle('Kurbani Hat')
+    .setDescription('The Kurbani Hat API description')
     .setVersion('1.0')
     .addTag('cow')
     .build();
