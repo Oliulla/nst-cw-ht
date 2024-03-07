@@ -1,9 +1,18 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { now, Document } from 'mongoose';
 
-@Schema()
-export class Test {
+export type TestDocument = TestGroup & Document;
+
+@Schema({ timestamps: true, collection: 'testGroup' })
+export class TestGroup {
   @Prop()
-  test: string;
+  title: string;
+
+  @Prop({ default: now() })
+  createdAt: Date;
+
+  @Prop({ default: now() })
+  updatedAt: Date;
 }
 
-export const TestSchema = SchemaFactory.createForClass(Test);
+export const TestSchema = SchemaFactory.createForClass(TestGroup);
