@@ -14,14 +14,14 @@ export class NameDto {
   @IsNotEmpty()
   @IsString()
   @Length(4, 12, {
-    message: 'Password length Must be between 4 and 12 charcters',
+    message: 'Name length Must be between 4 and 12 charcters',
   })
-  fristName: string;
+  firstName: string;
 
   @IsNotEmpty()
   @IsString()
   @Length(4, 12, {
-    message: 'Password length Must be between 4 and 12 charcters',
+    message: 'Name length Must be between 4 and 12 charcters',
   })
   lastName: string;
 }
