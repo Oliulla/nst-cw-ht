@@ -3,10 +3,12 @@ import { now } from 'mongoose';
 import { UserRole } from 'src/modules/user/user.entity';
 
 export type UserDocument = User & Document;
+
 @Schema({ _id: false })
 class Name {
   @Prop({ required: true })
   firstName: string;
+
   @Prop({ required: true })
   lastName: string;
 }
